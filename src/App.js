@@ -5,6 +5,7 @@ import BookmarkList from './BookmarkList/BookmarkList';
 import Nav from './Nav/Nav';
 import config from './config';
 import BookmarksContext from './BookmarksContext';
+import Rating from './Rating/Rating';
 import './App.css';
 
 // const bookmarks = [
@@ -98,6 +99,7 @@ class App extends Component {
               component={BookmarkList}
             />
           </div>
+          <Rating value={4} />
         </BookmarksContext.Provider>
       </main>
     );
