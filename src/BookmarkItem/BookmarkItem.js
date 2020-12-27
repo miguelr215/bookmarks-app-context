@@ -76,7 +76,24 @@ BookmarkItem.defaultProps = {
 
 BookmarkItem.propTypes = {
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  // url: PropTypes.string.isRequired,
+  url: (props, propName, componentName) => {
+    // get the value of the prop
+    const prop = props[propName];
+    // do the is required check
+    if(!prop){
+      return new Error(`${propName} is required in ${componentName}. Validation failed.`);
+    }
+    // check the type
+    if(typeof prop != 'string'){
+      return new Error(`Invalid prop, ${propName} is expected to be a string in ${componentName}. ${typeof prop} found.`);
+    }
+    // do the custom check here
+    // use a simple regex (regular expression)
+    if(prop.length < 5 || !prop.match(new RegExp(/^https?:\/\//))){
+      return new Error(`Invalid prop, ${propName} must be minimum 5 characters and start with http(s)://`);
+    }
+  },
   rating: PropTypes.number,
   description: PropTypes.string
 }
