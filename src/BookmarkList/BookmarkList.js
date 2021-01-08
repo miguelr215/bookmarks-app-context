@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BookmarkItem from '../BookmarkItem/BookmarkItem';
 import BookmarksContext from '../BookmarksContext';
 import PropTypes from 'prop-types';
-import './BookmarkList.css'
+import './BookmarkList.css';
 
 export default class BookmarkList extends Component {
   static contextType = BookmarksContext;

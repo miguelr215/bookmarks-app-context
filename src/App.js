@@ -99,7 +99,7 @@ class App extends Component {
               component={BookmarkList}
             />
           </div>
-          <Rating value={4} />
+          <Rating value={5} />
         </BookmarksContext.Provider>
       </main>
     );
